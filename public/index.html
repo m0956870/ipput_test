@@ -15,6 +15,10 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.12.4.js"></script>
   <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </head>
 
 <body>
@@ -22,9 +26,20 @@
   <div id="root"></div>
   <div id="datepicker"></div>
 
+  <label for="checkin">Checkin</label>
+  <input type="text" name="checkin" id="checkin" placeholder=" Check in" />
+
+  <label for="checkout">Checkout</label>
+  <input type="text" name="checkout" id="checkout" placeholder=" Check out" />
+
   <script>
-    $( "#datepicker" ).datepicker();
-    </script>
+    $("#datepicker").datepicker();
+
+    $(document).ready(function () {
+      $("#checkin").datepicker();
+      $("#checkout").datepicker();
+    });
+  </script>
 </body>
 
 </html>

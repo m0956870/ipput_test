@@ -2,12 +2,16 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  // const s = document.createElement('script');
+  // s.type = 'text/javascript';
+  // s.async = true;
+  // s.innerHTML = "document.write('This is output by document.write()!')";
+  // s.instance.appendChild(s);
+  
   return (
     <div className="App">
-      <div id="datepicker"></div>
-
-      {/* <label for="checkout">Checkout</label> */}
-      {/* <input type="text" name="checkout" id="checkout" placeholder=" Check out" /> */}
+      <div id="id"></div>
     </div>
   );
 }
