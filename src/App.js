@@ -50,19 +50,19 @@ export default class Test extends React.Component {
 
       <label for="checkin">app Checkin</label>
       <input
-        type="text"
+        type="date"
         onChange={this.inputHandle}
-        onClick={e => e.target.type = "date"}
-        onBlur={e => e.target.type = "text"}
+        // onClick={e => e.target.type = "date"}
+        // onBlur={e => e.target.type = "date"}
         placeholder="Check in"
       />
 
       <label for="checkout">app Checkout</label>
       <input
-        type="text"
+        type="date"
         onChange={this.inputHandle}
-        onClick={e => e.target.type = "date"}
-        onBlur={e => e.target.type = "text"}
+        // onClick={e => e.target.type = "date"}
+        // onBlur={e => e.target.type = "date"}
         placeholder="Check out"
       />
     </div>;
