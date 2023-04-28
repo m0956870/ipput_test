@@ -42,9 +42,7 @@ export default class Test extends React.Component {
 
   inputHandle(e) {
     console.log(e.target.value)
-    console.log(new Date(e.target.value.replace(/-/g, "/")));
     alert(e.target.value)
-    alert(new Date(e.target.value.replace(/-/g, "/")));
   }
 
   render() {
@@ -52,20 +50,20 @@ export default class Test extends React.Component {
 
       <label for="checkin">app Checkin</label>
       <input
+        type="text"
         onChange={this.inputHandle}
-        type="date"
-        name="checkin"
-        id="checkin"
+        onClick={e => e.target.type = "date"}
+        onBlur={e => e.target.type = "text"}
         placeholder="Check in"
       />
 
       <label for="checkout">app Checkout</label>
       <input
+        type="text"
         onChange={this.inputHandle}
-        type="date"
-        name="checkout"
-        id="checkout"
-        placeholder=" Check out"
+        onClick={e => e.target.type = "date"}
+        onBlur={e => e.target.type = "text"}
+        placeholder="Check out"
       />
     </div>;
   }
