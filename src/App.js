@@ -1,19 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
 
-function App() {
+// function App() {
 
-  // const s = document.createElement('script');
-  // s.type = 'text/javascript';
-  // s.async = true;
-  // s.innerHTML = "document.write('This is output by document.write()!')";
-  // s.instance.appendChild(s);
-  
-  return (
-    <div className="App">
-      <div id="id"></div>
-    </div>
-  );
+//   return (
+//     <>
+//       <div id="datepicker">app</div>
+
+//       <label for="checkin">app Checkin</label>
+//       <input type="text" name="checkin" id="checkin" placeholder=" Check in" />
+
+//       <label for="checkout">app Checkout</label>
+//       <input type="text" name="checkout" id="checkout" placeholder=" Check out" />
+//     </>
+//   );
+// }
+
+// export default App;
+
+import React from 'react';
+
+export default class Test extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.innerHTML = `
+    $("#datepicker").datepicker();
+
+    $(document).ready(function () {
+      $("#checkin").datepicker();
+      $("#checkout").datepicker();
+    })`;
+    this.instance.appendChild(s);
+  }
+
+  render() {
+    return <div ref={el => (this.instance = el)}>
+      <div id="datepicker">app test</div>
+
+      <label for="checkin">app Checkin</label>
+      <input type="text" name="checkin" id="checkin" placeholder=" Check in" />
+
+      <label for="checkout">app Checkout</label>
+      <input type="text" name="checkout" id="checkout" placeholder=" Check out" />
+    </div>;
+  }
 }
-
-export default App;
