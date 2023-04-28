@@ -26,28 +26,47 @@ export default class Test extends React.Component {
   }
 
   componentDidMount() {
-    const s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.innerHTML = `
-    $("#datepicker").datepicker();
+    // const s = document.createElement('script');
+    // s.type = 'text/javascript';
+    // s.async = true;
+    // // s.innerHTML = `
+    // // $(document).ready(function () {
+    // //   $("#checkin").datepicker();
+    // //   $("#checkout").datepicker();
+    // // })`;
+    // s.innerHTML = `
+    // moment().format();
+    // `;
+    // this.instance.appendChild(s);
+  }
 
-    $(document).ready(function () {
-      $("#checkin").datepicker();
-      $("#checkout").datepicker();
-    })`;
-    this.instance.appendChild(s);
+  inputHandle(e) {
+    console.log(e.target.value)
+    console.log(new Date(e.target.value.replace(/-/g, "/")));
+    alert(e.target.value)
+    alert(new Date(e.target.value.replace(/-/g, "/")));
   }
 
   render() {
     return <div ref={el => (this.instance = el)}>
-      <div id="datepicker">app test</div>
 
       <label for="checkin">app Checkin</label>
-      <input type="text" name="checkin" id="checkin" placeholder=" Check in" />
+      <input
+        onChange={this.inputHandle}
+        type="date"
+        name="checkin"
+        id="checkin"
+        placeholder="Check in"
+      />
 
       <label for="checkout">app Checkout</label>
-      <input type="text" name="checkout" id="checkout" placeholder=" Check out" />
+      <input
+        onChange={this.inputHandle}
+        type="date"
+        name="checkout"
+        id="checkout"
+        placeholder=" Check out"
+      />
     </div>;
   }
 }
